@@ -1,0 +1,157 @@
+.admin-page {
+  background: #111;
+  color: #eee;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.admin-header h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.back-to-dashboard {
+  background: transparent;
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.back-to-dashboard:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.admin-search-bar {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.admin-search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.job-form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.job-form input,
+.job-form textarea {
+  padding: 0.75rem;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #eee;
+  width: 100%;
+}
+
+.job-form button {
+  padding: 0.75rem;
+  background: #555;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .job-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.job-item {
+  background: #222;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.job-item:hover {
+  transform: translateY(-3px);
+  background: #2a2a2a;
+}
+
+.job-item h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.company-location {
+  margin: 0 0 0.75rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.skills {
+  margin-bottom: 1rem;
+}
+
+.skills span {
+  display: inline-block;
+  background: #444;
+  color: #eee;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin: 0 0.5rem 0.5rem 0;
+  font-size: 0.85rem;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  color: #eee;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #444;
+}
+
+.no-results {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}

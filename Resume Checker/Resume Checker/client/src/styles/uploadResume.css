@@ -1,0 +1,229 @@
+.upload-resume-page {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.upload-resume-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #212529;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.upload-resume-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #212529;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+.upload-resume-msg {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.upload-resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-resume-input {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #212529;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.upload-resume-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.upload-resume-button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.upload-resume-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Existing Resume Styles */
+.existing-resume-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resume-info-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+}
+
+.resume-icon {
+  font-size: 2.5rem;
+}
+
+.resume-details h3 {
+  margin: 0 0 0.5rem 0;
+  color: #212529;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.resume-details p {
+  margin: 0.25rem 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.view-resume-btn, .browse-jobs-btn, .delete-resume-btn {
+  padding: 0.65rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.view-resume-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.view-resume-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.browse-jobs-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.browse-jobs-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.delete-resume-btn {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+}
+
+.delete-resume-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.delete-resume-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.upload-restriction-notice {
+  background: #e7f3ff;
+  border: 1px solid #b8daff;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.upload-restriction-notice p {
+  margin: 0;
+  color: #004085;
+  font-size: 0.9rem;
+}
+
+/* Upload Form Styles */
+.file-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-types {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0;
+  text-align: center;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #e9ecef;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-spinner-small {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #e9ecef;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-actions {
+    flex-direction: column;
+  }
+  
+  .view-resume-btn, .browse-jobs-btn, .delete-resume-btn {
+    min-width: unset;
+  }
+}

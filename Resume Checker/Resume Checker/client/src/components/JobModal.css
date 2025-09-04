@@ -1,0 +1,410 @@
+/* JobModal.css - Enhanced Light Theme */
+.job-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.job-modal {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  color: #212529;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Header */
+.job-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 2px solid #f8f9fa;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  flex-shrink: 0;
+}
+
+.job-modal-title {
+  margin: 0 0 0.5rem 0;
+  color: #212529;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.job-modal-company {
+  margin: 0 0 0.25rem 0;
+  color: #007bff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.job-modal-company::before {
+  content: "🏢";
+  font-size: 1rem;
+}
+
+.job-modal-location {
+  margin: 0;
+  color: #6c757d;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.job-modal-location::before {
+  content: "📍";
+  font-size: 0.9rem;
+}
+
+.job-modal-close {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  color: #6c757d;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.job-modal-close:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  color: #495057;
+  transform: scale(1.05);
+}
+
+.job-modal-content {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.job-modal-section {
+  margin-bottom: 2rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f8f9fa;
+}
+
+.job-modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.job-modal-section h3 {
+  margin: 0 0 1rem 0;
+  color: #212529;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.job-modal-section h3[data-section="description"]::before {
+  content: "📝";
+}
+
+.job-modal-section h3[data-section="requirements"]::before {
+  content: "✅";
+}
+
+.job-modal-section h3[data-section="skills"]::before {
+  content: "🛠️";
+}
+
+.job-modal-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.job-modal-skill-tag {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #1565c0;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(21, 101, 192, 0.2);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-modal-skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.3);
+  background: linear-gradient(135deg, #bbdefb, #90caf9);
+}
+
+.job-modal-description {
+  line-height: 1.7;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.job-modal-description p {
+  margin: 0 0 1rem 0;
+}
+
+.job-modal-description p:last-child {
+  margin-bottom: 0;
+}
+
+.job-modal-description ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.job-modal-description li {
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+}
+
+.job-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-top: 2px solid #f8f9fa;
+  flex-shrink: 0;
+}
+
+/* Modal Buttons */
+.job-modal-cancel {
+  background: transparent;
+  border: 2px solid #dee2e6;
+  color: #6c757d;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.job-modal-cancel:hover {
+  background: #f8f9fa;
+  border-color: #ced4da;
+  color: #495057;
+  transform: translateY(-2px);
+}
+
+.job-modal-apply {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.job-modal-apply::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.job-modal-apply:hover::before {
+  left: 100%;
+}
+
+.job-modal-apply:hover {
+  background: linear-gradient(135deg, #0056b3, #004494);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.job-modal-apply:active {
+  transform: translateY(0);
+}
+
+/* Enhanced Mobile Responsive */
+@media (max-width: 768px) {
+  .job-modal-overlay {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+  
+  .job-modal {
+    max-height: calc(100vh - 4rem);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .job-modal-header {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .job-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .job-modal-title {
+    font-size: 1.5rem;
+    margin-right: 50px;
+  }
+  
+  .job-modal-company {
+    font-size: 1.1rem;
+  }
+  
+  .job-modal-content {
+    padding: 1rem 1.5rem;
+  }
+  
+  .job-modal-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .job-modal-footer {
+    padding: 1.5rem;
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+  
+  .job-modal-cancel,
+  .job-modal-apply {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-modal-overlay {
+    padding: 0.5rem;
+    padding-top: 1rem;
+  }
+  
+  .job-modal {
+    border-radius: 16px;
+    max-height: calc(100vh - 2rem);
+  }
+  
+  .job-modal-header {
+    padding: 1rem;
+  }
+  
+  .job-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  
+  .job-modal-title {
+    font-size: 1.3rem;
+    margin-right: 45px;
+  }
+  
+  .job-modal-company {
+    font-size: 1rem;
+  }
+  
+  .job-modal-location {
+    font-size: 0.9rem;
+  }
+  
+  .job-modal-content {
+    padding: 0.75rem 1rem;
+  }
+  
+  .job-modal-section {
+    padding: 1rem;
+  }
+  
+  .job-modal-section h3 {
+    font-size: 1.1rem;
+  }
+  
+  .job-modal-skills {
+    gap: 0.5rem;
+  }
+  
+  .job-modal-skill-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .job-modal-footer {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,46 @@
+/* client/src/styles/parsedResume.css */
+
+.parsed-page {
+  background-color: #111;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #eee;
+}
+
+.parsed-container {
+  background-color: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.parsed-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.parsed-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .parsed-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.parsed-section h3 {
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  color: #fff;
+}
+
+.parsed-section ul {
+  list-style-type: disc;
+  margin-left: 1rem;
+}
